@@ -1,0 +1,18 @@
+<%# frozen_string_literal: true %>
+<%%= simple_form_for(@<%= singular_table_name %>) do |f| %>
+  <%%= f.error_notification %>
+  <%%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%- attributes.each do |attribute| -%>
+      <%%= f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %>,
+        wrapper_html: { class: 'mb-4 block' },
+        input_html: { class: 'shadow'},
+        label_html: { class: 'block text-gray-700 text-sm font-bold mb-2' } %>
+    <%- end -%>
+  </div>
+
+  <div class="form-actions mt-3 text-center">
+    <%%= f.button :submit, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' %>
+  </div>
+<%% end %>
