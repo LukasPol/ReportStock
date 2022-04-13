@@ -25,6 +25,13 @@ group :development, :test do
 end
 
 group :development do
-  gem 'rubocop-rails'
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
   gem 'web-console'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'simplecov'
 end
