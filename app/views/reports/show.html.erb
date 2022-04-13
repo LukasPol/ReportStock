@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<div>
+  <p>Está finalizado seu relatório</p>
+</div>
+
+<div class="mt-5">
+  <%= link_to "Generate new Report", root_path, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' %>
+
+  <%= button_to "Destroy this report", @report, method: :delete, class: 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-5' %>
+</div>
