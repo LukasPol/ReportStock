@@ -4,11 +4,11 @@ RSpec.describe '/reports', type: :request do
   let(:report) { create(:report) }
 
   let(:valid_attributes) do
-    { attachment: Rack::Test::UploadedFile.new('spec/fixtures/prevents.csv', 'csv/text') }
+    { attachment: Rack::Test::UploadedFile.new('spec/fixtures/prevents.csv', 'text/csv') }
   end
 
   let(:invalid_attributes) do
-    { attachment: nil }
+    { attachment: Rack::Test::UploadedFile.new('spec/fixtures/empty.csv', 'text/csv') }
   end
 
   describe 'GET /show' do
@@ -56,7 +56,7 @@ RSpec.describe '/reports', type: :request do
 
     it 'redirects to the reports list' do
       delete report_url(report)
-      expect(response).to redirect_to(reports_url)
+      expect(response).to redirect_to(root_url)
     end
   end
 end
