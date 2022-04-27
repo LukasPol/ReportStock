@@ -8,16 +8,14 @@ class ReportsController < ApplicationController
   end
 
   def create
-    @report = Report.new(report_params)
+    service = CreateReportService.call(report_params[:attachment])
+    @report = service.result
 
-    respond_to do |format|
-      if @report.save
-        format.html { redirect_to report_url(@report), notice: 'Report was successfully created.' }
-        format.json { render :show, status: :created, location: @report }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @report.errors, status: :unprocessable_entity }
-      end
+    if service.success? && @report.valid?
+      @report.save!
+      redirect_to report_url(@report), notice: 'Report was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -32,12 +30,10 @@ class ReportsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_report
     @report = Report.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def report_params
     params.require(:report).permit(:attachment)
   end
