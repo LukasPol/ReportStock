@@ -56,7 +56,7 @@ RSpec.describe '/reports', type: :request do
 
     it 'redirects to the reports list' do
       delete report_url(report)
-      expect(response).to redirect_to(reports_url)
+      expect(response).to redirect_to(root_url)
     end
   end
 end
