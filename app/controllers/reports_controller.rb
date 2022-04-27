@@ -1,7 +1,13 @@
 class ReportsController < ApplicationController
-  before_action :set_report, only: %i[show destroy]
+  before_action :set_report, only: %i[show destroy download]
 
   def show; end
+
+  def download
+    send_data @report.attachment.download,
+              type: :csv,
+              filename: "#{DateTime.now}.csv"
+  end
 
   def new
     @report = Report.new
