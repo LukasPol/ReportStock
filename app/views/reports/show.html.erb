@@ -2,10 +2,17 @@
 
 <div>
   <p>Está finalizado seu relatório</p>
+
+  <%= link_to 'Download',
+              report_download_path(@report),
+              class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded block text-center w-full' %>
 </div>
 
 <div class="mt-5">
-  <%= link_to "Generate new Report", root_path, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' %>
+  <%= link_to "Generate new Report", root_path, class: 'text-black font-bold py-2 px-4 block w-full' %>
 
-  <%= button_to "Destroy this report", @report, method: :delete, class: 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-5' %>
+  <%= button_to "Destroy this report",
+              @report,
+              method: :delete,
+              class: 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-3 block w-full' %>
 </div>
