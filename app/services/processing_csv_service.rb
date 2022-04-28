@@ -8,7 +8,7 @@ class ProcessingCsvService
     @file = CSV.read(file, headers: true, col_sep: ';')
     @types = ['Dividendo', 'Juros Sobre Capital Próprio']
     @stocks = normalize_name_stocks
-    @filename = "tmp/csv/#{DateTime.now}.csv"
+    @filename = "tmp/storage/#{DateTime.now}.csv"
   end
 
   def call
