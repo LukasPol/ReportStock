@@ -5,8 +5,17 @@ describe CreateReportService do
 
   describe '.call' do
     context 'Create Report' do
-      it 'should return service success' do
+      it 'should return service success with CSV' do
         @file = Rack::Test::UploadedFile.new('spec/fixtures/prevents.csv', 'text/csv')
+
+        expect(subject).to be_success
+      end
+
+      it 'should return service success with excel' do
+        @file = Rack::Test::UploadedFile.new(
+          'spec/fixtures/prevents.xlsx',
+          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        )
 
         expect(subject).to be_success
       end
