@@ -6,7 +6,7 @@ ruby '3.0.0'
 gem 'bootsnap', require: false
 gem 'cssbundling-rails', '~> 1.1.0'
 gem 'dotenv-rails', '~> 2.5'
-gem 'image_processing', '~> 1.12'
+gem 'image_processing', '~> 1.12.2'
 gem 'jsbundling-rails', '~> 1.0.2'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
