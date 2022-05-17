@@ -9,15 +9,10 @@ class CreateReportService
   end
 
   def call
-    unless file_supported?
-      add_errors(:attachment, 'File not supported')
-      return report
-    end
-
-    service = ProcessingCsvService.call(file)
+    service = ProcessingFileService.call(file)
 
     if service.success?
-      add_file_in_report(filename: service.result)
+      add_file_in_report(filename: service.result[:filename])
     else
       service.errors.each_key do |key|
         add_errors(key, service.errors[key][0])
