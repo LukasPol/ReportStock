@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+gem 'rails', '~> 7.0.2', '>= 7.0.2.4'
+
 gem 'bootsnap', require: false
 gem 'cssbundling-rails', '~> 1.1.0'
 gem 'dotenv-rails', '~> 2.5'
@@ -10,9 +12,8 @@ gem 'image_processing', '~> 1.12.2'
 gem 'jsbundling-rails', '~> 1.0.2'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
-gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
 gem 'roo', '~> 2.9.0', github: 'roo-rb/roo'
-gem 'simple_command', '~> 0.1.0', github: 'nebulab/simple_command'
+gem 'simple_command', '~> 0.1.0'
 gem 'simple_form', '~> 5.1.0'
 gem 'sprockets-rails', '~> 3.4.2'
 gem 'stimulus-rails', '~> 1.0.4'
