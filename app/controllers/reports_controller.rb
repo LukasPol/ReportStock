@@ -19,7 +19,7 @@ class ReportsController < ApplicationController
 
     if service.success? && @report.valid?
       @report.save!
-      redirect_to report_url(@report), notice: 'Report was successfully created.'
+      redirect_to report_url(@report), notice: t(:created, model: t(:report, scope: 'activerecord.models'))
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class ReportsController < ApplicationController
 
   def destroy
     @report.destroy
-    redirect_to root_path, notice: 'Report was successfully destroyed.'
+    redirect_to root_path, notice: t(:deleted, model: t(:report, scope: 'activerecord.models'))
   end
 
   private
