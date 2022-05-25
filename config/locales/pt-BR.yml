@@ -1,0 +1,34 @@
+pt-BR:
+  created: "%{model} foi criado com sucesso."
+  created_f: "%{model} foi criada com sucesso."
+  create_model: "Criar %{model}"
+  creating_model: "Criando %{model}"
+  creating: "Criando"
+  deleted: "%{model} foi deletado com sucesso."
+  deleted_f: "%{model} foi deletada com sucesso."
+  edit_model: "Editar %{model}"
+  editing_model: "Editando %{model}"
+  editing: "Editando"
+  show_model: "Visualizar %{model}"
+  updated: "%{model} foi atualizado com sucesso."
+  updated_f: "%{model} foi atualizada com sucesso."
+  generate_model: "Gerar um novo %{model}"
+  generate_model_f: "Gerar uma nova %{model}"
+
+  back: "Voltar"
+  destroy: "Deletar"
+  details: "Visualizar"
+  edit: "Editar"
+  show: "Visualizar"
+  download: "Baixar"
+
+  finalized_report: 'Finalizado seu relatório'
+
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      blank: não pode ficar em branco
+      empty: não pode ficar vazio
+      present: deve ficar em branco
+      required: é obrigatório(a)
+      model_invalid: "A validação falhou: %{errors}"
