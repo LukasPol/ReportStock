@@ -1,24 +1,45 @@
-# README
+# Stock Report
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Para ajudar os investidores de ações a terem um relatório de suas ações pegando do site de B3.
 
-Things you may want to cover:
+[Click here to visit](https://stock-report-app.herokuapp.com/)
 
-* Ruby version
+## Funcionalidade
 
-* System dependencies
+Upload de um arquivo (CSV, XLSX) baixado da B3,
+irá processar o arquivo e irá criar um novo arquivo
+com os recebimentos de Dividendos e JCP junto para por 
+ação preparado para usar na declaração do IPRF.
 
-* Configuration
+## Dependencies
 
-* Database creation
+- Ruby 3.0.4
+- Rails 7.0.2
+- Postgresql 12
+- Docker(optional)
 
-* Database initialization
+## Como rodar
 
-* How to run the test suite
+```bash
+cp .env.sample .env
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Coloque o seu usuário, senha, e host no arquivo `.env`
 
-* Deployment instructions
+```bash
+./bin/setup
+```
 
-* ...
+```bash
+./bin/dev
+```
+
+## Run test
+
+```bash
+rake db:test:prepare
+```
+
+```bash
+rspec
+```
